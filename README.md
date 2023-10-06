@@ -15,6 +15,19 @@ while x <= 100:
   x += 1
 
 ````
+Su respectivo diagrama de flujo:
+
+````mermaid
+flowchart TD
+    A[Inicio]--> B
+    B[x =1] --> D
+    D --> |falso| E[fin del codigo]
+    D{mientras x <= 100} 
+    D --> |verdadero| F[funcion x^2]
+    F --> G[imprimir x y x^2]
+    G --> H[suma 1 ala valor de x] --> D
+
+````
 
 ## Punto 2
 Imprimir un listado con los números impares desde 1 hasta 999 y seguidamente otro listado con los números pares desde 2 hasta 1000.
@@ -42,6 +55,25 @@ while y <= 999 :
   print(y)
 ````
 
+Su respectivo diagrama de flujo:
+
+````mermaid
+flowchart TD
+    A[Inicio]
+    A --> B[x = 0]
+    A --> C[y = 0]
+    B --> D{mientras x <= 1000} 
+    D --> |Verdadero|E[sumar +1 a x]
+    E --> F{si x % 2 != 0}
+    F --> |continuar|G[emprimir x] -->D
+    C --> I{mientras y <= 999} 
+    D --> |Falso|H[Fin]
+    I --> |Verdadero|J[sumar +1 a y]
+    J --> K{si y % 2 = 0}
+    K --> |continuar|L[imprimir y] --> I
+    I --> |Falso|H 
+````
+
 ## Punto 3
 Imprimir los números pares en forma descendente hasta 2 que son menores o iguales a un número natural n ≥ 2 dado
 
@@ -58,6 +90,20 @@ while x > 2:
     continue
     #continua hasta que la condicion del ´while´ acabe
   print(x)
+````
+
+Su respectivo diagrama de flujo:
+
+````mermaid
+flowchart TD
+    A[Inicio]
+    A --> B[ingrese un numero = x]
+    B --> C[imprimir el numero x]
+    C --> D{mientras x > 2}
+    D --> |Falso|Z[fin]
+    D --> |Verdadero|E[Restar -1 a x]
+    E --> F{si x % 2 != 0}
+    F --> |continuar|G[imprimir x] --> D
 ````
 
 ## Punto 4
